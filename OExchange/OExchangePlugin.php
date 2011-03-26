@@ -8,9 +8,6 @@ if (!defined('STATUSNET')) {
     exit(1);
 }
 
-error_reporting(E_ALL);
- ini_set("display_errors", 1);
-
 class OExchangePlugin extends Plugin
 {
     /**
@@ -24,9 +21,9 @@ class OExchangePlugin extends Plugin
         // Discovery actions
         $m->connect('.well-known/oexchange.xrd',
                     array('action' => 'oexchangexrd'));
-				// Discovery actions
-				$m->connect('oexchange/offer',
-					           array('action' => 'oexchangeoffer'));
+        // Discovery actions
+        $m->connect('oexchange/offer',
+                     array('action' => 'oexchangeoffer'));
         return true;
     }
 
@@ -37,9 +34,9 @@ class OExchangePlugin extends Plugin
      */
     function onStartHostMetaLinks($links)
     {
-			$url = common_local_url('oexchangexrd');
+      $url = common_local_url('oexchangexrd');
 
-	    $links[] = array('rel' => 'http://oexchange.org/spec/0.8/rel/resident-target',
+      $links[] = array('rel' => 'http://oexchange.org/spec/0.8/rel/resident-target',
                        'type' => 'application/xrd+xml',
                        'href' => $url);
       return true;

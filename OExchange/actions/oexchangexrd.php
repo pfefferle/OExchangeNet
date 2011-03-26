@@ -1,6 +1,6 @@
 <?php
 if (!defined('STATUSNET')) {
-    exit(1);
+  exit(1);
 }
 
 /**
@@ -16,10 +16,10 @@ class OExchangeXrdAction extends Action
    */
   function isReadOnly()
   {
-      return true;
+    return true;
   }
 
-	/**
+  /**
    * Handle the request
    *
    * @param array $args $_REQUEST data (unused)
@@ -28,14 +28,14 @@ class OExchangeXrdAction extends Action
    */
   function handle()
   {
-      parent::handle();
+    parent::handle();
 
-      $domain = common_config('site', 'server');
-		  $sharelink = common_local_url('oexchangeoffer');
-			
-			$icon = "http://".$domain."/favicon.ico";
-			
-      header('Content-type: application/xrd+xml');
+    $domain = common_config('site', 'server');
+    $sharelink = common_local_url('oexchangeoffer');
+      
+    $icon = "http://".$domain."/favicon.ico";
+      
+    header('Content-type: application/xrd+xml');
 ?>
 <?xml version='1.0' encoding='UTF-8'?>
 <XRD xmlns="http://docs.oasis-open.org/ns/xri/xrd-1.0">

@@ -1,6 +1,6 @@
 <?php
 if (!defined('STATUSNET')) {
-	exit(1);
+  exit(1);
 }
 
 /**
@@ -16,7 +16,7 @@ class OExchangeOfferAction extends Action
    */
   function isReadOnly()
   {
-		return true;
+    return true;
   }
 
   /**
@@ -27,12 +27,12 @@ class OExchangeOfferAction extends Action
    */
   function prepare($args)
   {
-		parent::prepare($args);
-		$this->url = $this->arg('url');
-		$this->title = $this->arg('title');
-		$this->description = $this->arg('description');
-			
-		return true;
+    parent::prepare($args);
+    $this->url = $this->arg('url');
+    $this->title = $this->arg('title');
+    $this->description = $this->arg('description');
+      
+    return true;
   }
 
   /**
@@ -45,12 +45,12 @@ class OExchangeOfferAction extends Action
    */
   function handle($args)
   {
-	  parent::handle($args);
+    parent::handle($args);
 
-	  $url = common_local_url('newnotice');
-	  $url .= "?status_textarea=".urlencode('"'.$this->title.'" '.$this->url);
-		
-		// redirect to "newnotice" page
-		common_redirect($url);
+    $url = common_local_url('newnotice');
+    $url .= "?status_textarea=".urlencode('"'.$this->title.'" '.$this->url);
+    
+    // redirect to "newnotice" page
+    common_redirect($url);
   }
 }
