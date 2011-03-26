@@ -1,4 +1,4 @@
 OExchangeNet
 =============
 
-An OExchange Plgin for StatusNet
+An OExchange Plugin for StatusNet
