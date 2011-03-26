@@ -46,9 +46,7 @@ class OExchangePlugin extends Plugin
      * Automatically load the actions and libraries used by the plugin
      *
      * @param Class $cls the class
-     *
      * @return boolean hook return
-     *
      */
     function onAutoload($cls)
     {
