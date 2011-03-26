@@ -32,9 +32,19 @@ class OExchangeXrdAction extends Action
 
     $domain = common_config('site', 'server');
     $sharelink = common_local_url('oexchangeoffer');
-      
-    $icon = "http://".$domain."/favicon.ico";
-      
+    
+    if (defined('OEXCHANGE_ICON')) {
+      $icon = OEXCHANGE_ICON;
+    } else {
+      $icon = common_path('plugins/OExchange/images/icon.png');
+    }
+    
+    if (defined('OEXCHANGE_ICON32')) {
+      $icon32 = OEXCHANGE_ICON32;
+    } else {
+      $icon32 = common_path('plugins/OExchange/images/icon32.png');
+    }
+
     header('Content-type: application/xrd+xml');
 ?>
 <?xml version='1.0' encoding='UTF-8'?>
@@ -46,8 +56,8 @@ class OExchangeXrdAction extends Action
     <Property type="http://www.oexchange.org/spec/0.8/prop/name">StatusNet Version <?php echo STATUSNET_VERSION; ?></Property>
     <Property type="http://www.oexchange.org/spec/0.8/prop/prompt">Share with your "<?php echo common_config('site', 'name'); ?>" network!</Property>
 
-    <Link rel="icon" href="<?php echo $icon ?>" type="image/vnd.microsoft.icon" />
-    <Link rel="icon32" href="http://www.example.com/favicon32.png" type="image/png" />
+    <Link rel="icon" href="<?php echo $icon; ?>" type="image/png" />
+    <Link rel="icon32" href="<?php echo $icon32; ?>" type="image/png" />
 
     <Link rel="http://www.oexchange.org/spec/0.8/rel/offer" href="<?php echo $sharelink; ?>" type="text/html" />
 </XRD>
