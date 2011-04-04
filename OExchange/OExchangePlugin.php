@@ -34,16 +34,16 @@ class OExchangePlugin extends Plugin
      */
     function onStartHostMetaLinks($links)
     {
-	    if (class_exists("BookmarkPlugin")) {
-				$url = common_local_url('bookmarkpopup');
-			} else {
-				$url = common_local_url('oexchangexrd');
-			}
-
-      $links[] = array('rel' => 'http://oexchange.org/spec/0.8/rel/resident-target',
+        if (class_exists("BookmarkPlugin")) {
+            $url = common_local_url('bookmarkpopup');
+        } else {
+            $url = common_local_url('oexchangexrd');
+        }
+        
+        $links[] = array('rel' => 'http://oexchange.org/spec/0.8/rel/resident-target',
                        'type' => 'application/xrd+xml',
                        'href' => $url);
-      return true;
+        return true;
     }
 
     /**
