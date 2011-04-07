@@ -31,8 +31,12 @@ class OExchangeXrdAction extends Action
     parent::handle();
 
     $domain = common_config('site', 'server');
-    $sharelink = common_local_url('oexchangeoffer');
-    
+    if (class_exists("BookmarkPlugin")) {
+      $sharelink = common_local_url('bookmarkpopup');
+    } else {
+      $sharelink = common_local_url('oexchangeoffer');
+    }
+
     if (defined('OEXCHANGE_ICON')) {
       $icon = OEXCHANGE_ICON;
     } else {
