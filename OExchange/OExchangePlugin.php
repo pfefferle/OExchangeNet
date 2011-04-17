@@ -1,13 +1,12 @@
 <?php
-/**
- * @package OExchange
- * @maintainer Matthias Pfefferle
- */
-
 if (!defined('STATUSNET')) {
     exit(1);
 }
 
+/**
+ * @package OExchange
+ * @author Matthias Pfefferle <pfefferle@pfefferle.status.net>
+ */
 class OExchangePlugin extends Plugin
 {
     /**
@@ -28,7 +27,8 @@ class OExchangePlugin extends Plugin
     }
 
     /**
-     * 
+     * Adds oexchange link to the host-meta file
+     *
      * @param array $links
      * @return boolean hook return
      */
